@@ -31,7 +31,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'rails_serve_static_assets'
+
+# Heroku
+gem 'rails_on_heroku'
+gem 'rails_12factor'
 
 # testing and development
 group :development, :test do
