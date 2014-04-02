@@ -53,6 +53,5 @@ BethelShortLinks::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :links
-  root 'links#index'
+  resources :links, path: '', only: [:create, :index, :show]
 end
