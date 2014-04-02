@@ -1,0 +1,25 @@
+= render partial: 'header'
+
+.container
+  
+  - if @errors
+    p.bg-primary = @errors
+
+  = render partial: 'new_link'
+
+  .row
+    p
+  - if @links.count > 0
+    .row
+      .col-md-8
+        .row
+          .col-md-6
+            = "Full URL"
+          .col-md-6
+            = "Short URL"
+        - for link in @links
+          .row
+            .col-md-6
+              = link.full_url
+            .col-md-6
+              = link.code

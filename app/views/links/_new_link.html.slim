@@ -1,0 +1,13 @@
+.row
+  .col-md-8
+    .row
+      .col-md-12
+        = form_for [@new_link] do |f|
+          fieldset
+            legend Create a New Link
+
+            = f.label :full_url do
+              = 'Paste in Full URL: '
+              = f.text_field :full_url
+
+            = f.submit value: 'Shorten URL'
