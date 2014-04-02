@@ -20,9 +20,7 @@ class LinksController < ApplicationController
   end
 
   def show
-    puts params[:id]
-
-    link = Link.find_by_code(params[:id])
+    link = Link.find_by_code(params[:code])
 
     if link
       link.clicks += 1

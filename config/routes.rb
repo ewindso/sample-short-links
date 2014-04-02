@@ -53,5 +53,7 @@ BethelShortLinks::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :links, path: '', only: [:create, :index, :show]
+
+  resources :links, path: '', only: [:create, :index]
+  get '/:code', to: 'links#show', constraints: {code:/[A-Za-z0-9]+/}
 end
