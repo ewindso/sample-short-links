@@ -25,5 +25,10 @@ describe Link do
       expect(link.code).to be_truthy
     end
 
+    it "should have a clicks count of 0 by default" do
+      link.save
+      expect(link.clicks).to eq(0)
+    end
+
   end
 end
