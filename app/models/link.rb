@@ -3,6 +3,8 @@ class Link < ActiveRecord::Base
 
   validates :full_url, :url=>true
 
+  default_scope order('id DESC')
+
   private
   def generate_code
     self.code = loop do

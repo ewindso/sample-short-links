@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   def index
-    @links = Link.all.order('id DESC')
+    @links = Link.all
 
     @new_link = Link.new
     @base_url = request.protocol + request.host_with_port    
@@ -12,7 +12,7 @@ class LinksController < ApplicationController
     if @new_link.save
       redirect_to '/'
     else
-      @links = Link.all.order('id DESC')
+      @links = Link.all
       @base_url = request.protocol + request.host_with_port
 
       render :index
