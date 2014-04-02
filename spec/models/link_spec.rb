@@ -20,5 +20,10 @@ describe Link do
       }.to change(Link, :count).by(0)
     end
 
+    it "should generate a code" do
+      link.save
+      expect(link.code).to be_truthy
+    end
+
   end
 end
