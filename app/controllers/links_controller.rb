@@ -3,15 +3,19 @@ class LinksController < ApplicationController
     @links = Link.all
 
     @new_link = Link.new
+    @base_url = request.protocol + request.host_with_port    
   end
 
   def create
-    @link = Link.create(link_params)
+    @new_link = Link.create(link_params)
 
-    if @link.save
+    if @new_link.save
       redirect_to root_url
     else
-      render :index, @errors => @link.errors
+      @links = Link.all
+      @base_url = request.protocol + request.host_with_port
+
+      render :index
     end      
   end
 
