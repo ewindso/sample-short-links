@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :link do
-    full_url "http://www.ibethel.org"    
+    full_url "http://www.isample.org"    
   end
 end

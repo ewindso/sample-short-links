@@ -17,9 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: bethel-short-links_development
+  database: sample-short-links_development
   pool: 5
-  username: bethel-short-links
+  username: sample-short-links
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,15 +46,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: bethel-short-links_test
+  database: sample-short-links_test
   pool: 5
-  username: bethel-short-links
+  username: sample-short-links
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: bethel-short-links_production
+  database: sample-short-links_production
   pool: 5
-  username: bethel-short-links
+  username: sample-short-links
   password:

@@ -13,7 +13,7 @@
 >
 > Install ruby 2.1.0 `rvm install 2.1.0`
 >
-> Create Postgres Superuser `createuser -P -s -e bethel-short-links` (keep password blank)
+> Create Postgres Superuser `createuser -P -s -e sample-short-links` (keep password blank)
 >
 > clone repo `git clone git@github.com:ewindso/sample-short-links.git`
 >

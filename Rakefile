@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BethelShortLinks::Application.load_tasks
+SampleShortLinks::Application.load_tasks
