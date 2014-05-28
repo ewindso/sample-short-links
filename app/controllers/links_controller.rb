@@ -7,19 +7,26 @@ class LinksController < ApplicationController
   end
 
   def create
-    @new_link = Link.create(link_params)
 
-    if @new_link.save
-      respond_to do |format|
-        format.html { redirect_to '/' }
-        format.json { render :json => @new_link }
+   @link = Link.find_by_full_url(link_params[:full_url])
+
+    if @link.nil?
+      @link = Link.create(link_params)
+
+      if @link.save == false
+        @links = Link.all
+        @base_url = request.protocol + request.host_with_port
+
+        render :index
+        return
       end
-    else
-      @links = Link.all
-      @base_url = request.protocol + request.host_with_port
+    end
 
-      render :index
-    end      
+    respond_to do |format|
+      format.html { redirect_to '/' }
+      format.json { render :json => @link }
+    end
+
   end
 
   def show
