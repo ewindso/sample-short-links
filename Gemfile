@@ -20,6 +20,8 @@ gem 'slim'
 
 gem 'activevalidators', '~> 2.1.0'
 
+gem 'active_model_serializers'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -10,7 +10,10 @@ class LinksController < ApplicationController
     @new_link = Link.create(link_params)
 
     if @new_link.save
-      redirect_to '/'
+      respond_to do |format|
+        format.html { redirect_to '/' }
+        format.json { render :json => @new_link }
+      end
     else
       @links = Link.all
       @base_url = request.protocol + request.host_with_port
