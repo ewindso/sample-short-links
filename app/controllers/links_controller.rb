@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  before_filter :authenticate, only: [:index]
+
   def index
     @links = Link.all
 
@@ -45,5 +47,11 @@ class LinksController < ApplicationController
   private
     def link_params
       params.require(:link).permit(:full_url)
+    end
+
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "belly" && password == "gainfitness97"
+      end
     end
 end
